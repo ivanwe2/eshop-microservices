@@ -5,7 +5,11 @@ builder.Services.AddCarter()
                 .AddMediatR(config =>
                 {
                     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
-                });
+                })
+                .AddMarten(options =>
+                {
+                    options.Connection(builder.Configuration.GetConnectionString("Database")!);
+                }).UseLightweightSessions();
 
 var app = builder.Build();
 
