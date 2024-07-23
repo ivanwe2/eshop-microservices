@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ "main", "dev" ]
 
+defaults:
+  run:
+    working-directory: src
+
 jobs:
   build:
 
