@@ -7,6 +7,7 @@ on:
   push:
   pull_request:
     branches: [ "main", "dev" ]
+  workflow_dispatch:
 
 defaults:
   run:
@@ -24,7 +25,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore --solution eshop-microservices.sln
+      run: dotnet restore eshop-microservices.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
