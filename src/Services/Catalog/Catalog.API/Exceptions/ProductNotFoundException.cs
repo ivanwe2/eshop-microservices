@@ -1,8 +1,11 @@
-﻿namespace Catalog.API.Exceptions
+﻿using BuildingBlocks.Exceptions;
+
+namespace Catalog.API.Exceptions
 {
-    public sealed class ProductNotFoundException : Exception
+    public sealed class ProductNotFoundException : NotFoundException
     {
-        public ProductNotFoundException() : base("Product not found!") 
-        { }
+        public ProductNotFoundException(Guid Id) : base("Product",Id) 
+        {
+        }
     }
 }
