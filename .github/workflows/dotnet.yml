@@ -27,6 +27,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore eshop-microservices.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build eshop-microservices.sln --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
