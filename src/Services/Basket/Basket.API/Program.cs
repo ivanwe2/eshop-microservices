@@ -1,3 +1,5 @@
+using Basket.API.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
@@ -8,11 +10,15 @@ builder.Services
         config.RegisterServicesFromAssembly(typeof(Program).Assembly);
         config.AddOpenBehavior(typeof(LoggingBehaviour<,>));
         config.AddOpenBehavior(typeof(ValidationBehaviour<,>));
-    });
-    //.AddMarten(options =>
-    //{
-    //    options.Connection(builder.Configuration.GetConnectionString("Database")!);
-    //}).UseLightweightSessions();
+    })
+    .AddMarten(options =>
+    {
+        options.Connection(builder.Configuration.GetConnectionString("Database")!);
+        options.Schema.For<ShoppingCart>().Identity(x=>x.UserName);
+        //options.CreateDatabasesForTenants(c => c.);
+    }).UseLightweightSessions();
+
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 
 //if (builder.Environment.IsDevelopment())
 //{
