@@ -6,10 +6,15 @@ services:
     build:
       context: .
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
+
   catalogdb: 
     image: postgres
+
   basketdb:
     image: postgres
+
+  distributedcache:
+    image: redis
 
 volumes:
  postgres_catalog:
