@@ -14,7 +14,7 @@
         public decimal TotalPrice 
         {
             get => OrderItems.Sum(x => x.Price * x.Quantity);
-            //private set { }
+            private set { }
         }
 
         public static Order Create(OrderId orderId, CustomerId customerId, OrderName orderName,
