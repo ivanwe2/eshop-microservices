@@ -44,7 +44,7 @@
             Payment = payment;
             Status = status;
 
-            AddDomainEvent(new OrderUpdatedEvent(order));
+            AddDomainEvent(new OrderUpdatedEvent(this));
         }
 
         public void AddOrderItem(ProductId productId, int quantity, decimal price)
