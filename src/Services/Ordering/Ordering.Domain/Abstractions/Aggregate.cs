@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ordering.Domain.Abstractions
+﻿namespace Ordering.Domain.Abstractions
 {
-    internal class Aggregate<TId> : Entity<TId>, IAggregate<TId>
+    public class Aggregate<TId> : Entity<TId>, IAggregate<TId>
     {
         private readonly List<IDomainEvent> _domainEvents = [];
         public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
