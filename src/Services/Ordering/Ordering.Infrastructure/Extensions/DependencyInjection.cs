@@ -17,7 +17,7 @@ namespace Ordering.Infrastructure.Extensions
             services.AddDbContext<ApplicationDbContext>(options => 
                 options.UseSqlServer(connectionString));
 
-            services.AddScoped<ApplicationDbContext>();
+            //services.AddScoped<ApplicationDbContext>();
             return services;
         }
     }
