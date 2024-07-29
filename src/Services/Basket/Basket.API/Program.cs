@@ -1,5 +1,6 @@
 using Basket.API.Data;
 using Basket.API.DependencyInjection;
+using BuildingBlocks.Messaging.MassTransit;
 using HealthChecks.UI.Client;
 using Microsoft.Extensions.Caching.Distributed;
 
@@ -9,6 +10,7 @@ var configuration = builder.Configuration;
 builder.Services
     .AddDataServices(configuration)
     .AddGrpcServices(configuration)
+    .AddMessageBroker(configuration)
     .AddCrossCuttingConcernsServices(configuration);
 
 var app = builder.Build();
