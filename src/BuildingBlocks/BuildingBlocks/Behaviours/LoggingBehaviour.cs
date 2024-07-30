@@ -31,7 +31,7 @@ namespace BuildingBlocks.Behaviours
             var timeTaken = timer.Elapsed;
             if (timeTaken.Seconds > 3)
             {
-                logger.LogWarning("[PERFORMANCE] The request {Request} took {TimeTaken} to complete.",
+                logger.LogWarning("[PERFORMANCE] The request {Request} took {TimeTaken} seconds to complete.",
                 typeof(TRequest).Name, timeTaken.Seconds);
             }
 
