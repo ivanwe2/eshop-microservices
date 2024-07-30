@@ -4,3 +4,5 @@ global using Shopping.Web.Models.Ordering;
 global using Refit;
 global using Shopping.Web.Services;
 global using System.Net;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.RazorPages;
