@@ -1,2 +1,0 @@
-# eshop-microservices
-Microservices Course
